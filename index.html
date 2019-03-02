@@ -1,31 +1,101 @@
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
    <title>Nacos Reference Documentation</title><link rel="stylesheet" type="text/css" href="css/manual-singlepage.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="en" class="book"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Nacos  Reference Documentation</h1></div><div><p class="releaseinfo">1.0.0.RELEASE</p></div><div><p class="copyright">Copyright &copy; 2018-2044 </p></div><div><div class="legalnotice"><a name="d5e9" href="#d5e9"></a>
-	<p>http://nacos.net</p>
-</div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="preface"><a href="#d5e11"></a></span></dt><dt><span class="part"><a href="#Halo-introduction">I. Nacos &#31616;&#20171;</a></span></dt><dd><dl><dt><span class="chapter"><a href="#nacos-what">1. &#20160;&#20040;&#26159;Nacos</a></span></dt></dl></dd><dt><span class="part"><a href="#_nacos%E6%9E%B6%E6%9E%84">II. Nacos&#26550;&#26500;</a></span></dt><dt><span class="part"><a href="#_spring_cloud_nacos">III. Spring-Cloud-Nacos</a></span></dt><dt><span class="part"><a href="#_faq">IV. FAQ</a></span></dt></dl></div>
+<p>Copies of this document may be made for your own use and for distribution to
+	others, provided that you do not charge any fee for such copies and further provided
+	that each copy contains this Copyright Notice, whether distributed in print or
+	electronically.</p>
+<p>http://nacos.net</p>
+</div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="preface"><a href="#d5e12"></a></span></dt><dt><span class="part"><a href="#nacos-introduction">I. Nacos &#31616;&#20171;</a></span></dt><dd><dl><dt><span class="chapter"><a href="#nacos-what">1. &#20160;&#20040;&#26159;Nacos</a></span></dt><dt><span class="chapter"><a href="#nacos-arch">2. Nacos&#26550;&#26500;&#21078;&#26512;</a></span></dt></dl></dd><dt><span class="part"><a href="#nacos-config">II. Nacos Config &#31616;&#20171;</a></span></dt><dd><dl><dt><span class="chapter"><a href="#_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0">3. &#37197;&#32622;&#20013;&#24515;&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_config%E6%A6%82%E8%BF%B0">4. Nacos Config&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_config%E5%AF%B9%E6%AF%94">5. Nacos Config&#23545;&#27604;</a></span></dt></dl></dd><dt><span class="part"><a href="#_nacos_config_quick_start">III. Nacos Config Quick Start</a></span></dt><dd><dl><dt><span class="chapter"><a href="#_nacos_config_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B">6. Nacos Config &#20837;&#38376;&#26696;&#20363;</a></span></dt></dl></dd><dt><span class="part"><a href="#_nacos_config%E8%AE%BE%E8%AE%A1%E6%8F%AD%E7%A7%98">IV. Nacos Config&#35774;&#35745;&#25581;&#31192;</a></span></dt><dt><span class="part"><a href="#nacos-Naming">V. Nacos Naming &#31616;&#20171;</a></span></dt><dd><dl><dt><span class="chapter"><a href="#_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0_2">7. &#37197;&#32622;&#20013;&#24515;&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_naming%E6%A6%82%E8%BF%B0">8. Nacos Naming&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_naming%E5%AF%B9%E6%AF%94">9. Nacos Naming&#23545;&#27604;</a></span></dt></dl></dd><dt><span class="part"><a href="#_nacos_naming_quick_start">VI. Nacos Naming Quick Start</a></span></dt><dd><dl><dt><span class="chapter"><a href="#_nacos_naming_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B">10. Nacos Naming &#20837;&#38376;&#26696;&#20363;</a></span></dt></dl></dd><dt><span class="part"><a href="#_nacos_naming%E8%AE%BE%E8%AE%A1%E6%8F%AD%E7%A7%98">VII. Nacos Naming&#35774;&#35745;&#25581;&#31192;</a></span></dt><dt><span class="part"><a href="#spring-cloud-nacos">VIII. Spring Cloud Nacos&#31616;&#20171;</a></span></dt><dt><span class="part"><a href="#nacos-faq">IX. Nacos FAQ</a></span></dt><dd><dl><dt><span class="chapter"><a href="#_nacos%E5%B8%B8%E8%A7%81faq">11. Nacos&#24120;&#35265;FAQ</a></span></dt></dl></dd></dl></div>
 
-<div class="preface"><div class="titlepage"><div><div><h1 class="title"><a name="d5e11" href="#d5e11"></a></h1></div></div></div>
+<div class="preface"><div class="titlepage"><div><div><h1 class="title"><a name="d5e12" href="#d5e12"></a></h1></div></div></div>
 
 <p>Nacos&#20135;&#21697;release note <a class="ulink" href="https://github.com/alibaba/nacos/releases" target="_top">https://github.com/alibaba/nacos/releases</a> [&#12298;Nacos release&#12299;^]</p>
 <p>&#32852;&#31995;&#25105;&#20204;&#65306;<a class="ulink" href="mailto:Software_King@qq.com" target="_top">Software_King@qq.com</a></p>
 </div>
-<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="Halo-introduction" href="#Halo-introduction"></a>Part&nbsp;I.&nbsp;Nacos &#31616;&#20171;</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#nacos-what">1. &#20160;&#20040;&#26159;Nacos</a></span></dt></dl></div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="nacos-introduction" href="#nacos-introduction"></a>Part&nbsp;I.&nbsp;Nacos &#31616;&#20171;</h1></div></div></div>
 
+<div class="partintro"><div></div>
+<p>Nacos &#33268;&#21147;&#20110;&#24110;&#21161;&#24744;&#21457;&#29616;&#12289;&#37197;&#32622;&#21644;&#31649;&#29702;&#24494;&#26381;&#21153;&#12290;Nacos &#25552;&#20379;&#20102;&#19968;&#32452;&#31616;&#21333;&#26131;&#29992;&#30340;&#29305;&#24615;&#38598;&#65292;&#24110;&#21161;&#24744;&#24555;&#36895;&#23454;&#29616;&#21160;&#24577;&#26381;&#21153;&#21457;&#29616;&#12289;&#26381;&#21153;&#37197;&#32622;&#12289;&#26381;&#21153;&#20803;&#25968;&#25454;&#21450;&#27969;&#37327;&#31649;&#29702;&#12290;</p>
+<p>Nacos &#24110;&#21161;&#24744;&#26356;&#25935;&#25463;&#21644;&#23481;&#26131;&#22320;&#26500;&#24314;&#12289;&#20132;&#20184;&#21644;&#31649;&#29702;&#24494;&#26381;&#21153;&#24179;&#21488;&#12290; Nacos &#26159;&#26500;&#24314;&#20197;&#8220;&#26381;&#21153;&#8221;&#20026;&#20013;&#24515;&#30340;&#29616;&#20195;&#24212;&#29992;&#26550;&#26500; (&#20363;&#22914;&#24494;&#26381;&#21153;&#33539;&#24335;&#12289;&#20113;&#21407;&#29983;&#33539;&#24335;) &#30340;&#26381;&#21153;&#22522;&#30784;&#35774;&#26045;&#12290;</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top">
+<pre class="literallayout">Nacos Reference&#30340;&#32534;&#20889;</pre>
+</td></tr></table></div>
+<div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#nacos-what">1. &#20160;&#20040;&#26159;Nacos</a></span></dt><dt><span class="chapter"><a href="#nacos-arch">2. Nacos&#26550;&#26500;&#21078;&#26512;</a></span></dt></dl></div></div>
 <div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="nacos-what" href="#nacos-what"></a>1.&nbsp;&#20160;&#20040;&#26159;Nacos</h2></div></div></div>
 
+<p>&#26381;&#21153;&#65288;Service&#65289;&#26159; Nacos &#19990;&#30028;&#30340;&#19968;&#31561;&#20844;&#27665;&#12290;Nacos &#25903;&#25345;&#20960;&#20046;&#25152;&#26377;&#20027;&#27969;&#31867;&#22411;&#30340;&#8220;&#26381;&#21153;&#8221;&#30340;&#21457;&#29616;&#12289;&#37197;&#32622;&#21644;&#31649;&#29702;&#65306;</p>
+</div>
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="nacos-arch" href="#nacos-arch"></a>2.&nbsp;Nacos&#26550;&#26500;&#21078;&#26512;</h2></div></div></div>
+
 
 </div>
 </div>
-<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_nacos%E6%9E%B6%E6%9E%84" href="#_nacos%E6%9E%B6%E6%9E%84"></a>Part&nbsp;II.&nbsp;Nacos&#26550;&#26500;</h1></div></div></div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="nacos-config" href="#nacos-config"></a>Part&nbsp;II.&nbsp;Nacos Config &#31616;&#20171;</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0">3. &#37197;&#32622;&#20013;&#24515;&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_config%E6%A6%82%E8%BF%B0">4. Nacos Config&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_config%E5%AF%B9%E6%AF%94">5. Nacos Config&#23545;&#27604;</a></span></dt></dl></div>
+
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0" href="#_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0"></a>3.&nbsp;&#37197;&#32622;&#20013;&#24515;&#27010;&#36848;</h2></div></div></div>
 
 
 </div>
-<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_spring_cloud_nacos" href="#_spring_cloud_nacos"></a>Part&nbsp;III.&nbsp;Spring-Cloud-Nacos</h1></div></div></div>
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos_config%E6%A6%82%E8%BF%B0" href="#_nacos_config%E6%A6%82%E8%BF%B0"></a>4.&nbsp;Nacos Config&#27010;&#36848;</h2></div></div></div>
 
 
 </div>
-<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_faq" href="#_faq"></a>Part&nbsp;IV.&nbsp;FAQ</h1></div></div></div>
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos_config%E5%AF%B9%E6%AF%94" href="#_nacos_config%E5%AF%B9%E6%AF%94"></a>5.&nbsp;Nacos Config&#23545;&#27604;</h2></div></div></div>
 
 
+</div>
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_nacos_config_quick_start" href="#_nacos_config_quick_start"></a>Part&nbsp;III.&nbsp;Nacos Config Quick Start</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#_nacos_config_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B">6. Nacos Config &#20837;&#38376;&#26696;&#20363;</a></span></dt></dl></div>
+
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos_config_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B" href="#_nacos_config_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"></a>6.&nbsp;Nacos Config &#20837;&#38376;&#26696;&#20363;</h2></div></div></div>
+
+<pre class="programlisting"><span class="hl-keyword">public</span> List&lt;GregorianCalendar&gt; authorsBornAfter1<span class="hl-number">980</span>() {
+    <span class="hl-keyword">return</span> <span class="hl-keyword">this</span>.create.selectFrom(AUTHOR)
+        .where(AUTHOR.DATE_OF_BIRTH.greaterThan(<span class="hl-keyword">new</span> GregorianCalendar(<span class="hl-number">1980</span>, <span class="hl-number">0</span>, <span class="hl-number">1</span>)))
+        .fetch(AUTHOR.DATE_OF_BIRTH);
+}</pre>
+</div>
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_nacos_config%E8%AE%BE%E8%AE%A1%E6%8F%AD%E7%A7%98" href="#_nacos_config%E8%AE%BE%E8%AE%A1%E6%8F%AD%E7%A7%98"></a>Part&nbsp;IV.&nbsp;Nacos Config&#35774;&#35745;&#25581;&#31192;</h1></div></div></div>
+
+
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="nacos-Naming" href="#nacos-Naming"></a>Part&nbsp;V.&nbsp;Nacos Naming &#31616;&#20171;</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0_2">7. &#37197;&#32622;&#20013;&#24515;&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_naming%E6%A6%82%E8%BF%B0">8. Nacos Naming&#27010;&#36848;</a></span></dt><dt><span class="chapter"><a href="#_nacos_naming%E5%AF%B9%E6%AF%94">9. Nacos Naming&#23545;&#27604;</a></span></dt></dl></div>
+
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0_2" href="#_%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%A6%82%E8%BF%B0_2"></a>7.&nbsp;&#37197;&#32622;&#20013;&#24515;&#27010;&#36848;</h2></div></div></div>
+
+
+</div>
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos_naming%E6%A6%82%E8%BF%B0" href="#_nacos_naming%E6%A6%82%E8%BF%B0"></a>8.&nbsp;Nacos Naming&#27010;&#36848;</h2></div></div></div>
+
+
+</div>
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos_naming%E5%AF%B9%E6%AF%94" href="#_nacos_naming%E5%AF%B9%E6%AF%94"></a>9.&nbsp;Nacos Naming&#23545;&#27604;</h2></div></div></div>
+
+
+</div>
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_nacos_naming_quick_start" href="#_nacos_naming_quick_start"></a>Part&nbsp;VI.&nbsp;Nacos Naming Quick Start</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#_nacos_naming_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B">10. Nacos Naming &#20837;&#38376;&#26696;&#20363;</a></span></dt></dl></div>
+
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos_naming_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B" href="#_nacos_naming_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"></a>10.&nbsp;Nacos Naming &#20837;&#38376;&#26696;&#20363;</h2></div></div></div>
+
+
+</div>
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="_nacos_naming%E8%AE%BE%E8%AE%A1%E6%8F%AD%E7%A7%98" href="#_nacos_naming%E8%AE%BE%E8%AE%A1%E6%8F%AD%E7%A7%98"></a>Part&nbsp;VII.&nbsp;Nacos Naming&#35774;&#35745;&#25581;&#31192;</h1></div></div></div>
+
+
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="spring-cloud-nacos" href="#spring-cloud-nacos"></a>Part&nbsp;VIII.&nbsp;Spring Cloud Nacos&#31616;&#20171;</h1></div></div></div>
+
+
+</div>
+<div class="part"><div class="titlepage"><div><div><h1 class="title"><a name="nacos-faq" href="#nacos-faq"></a>Part&nbsp;IX.&nbsp;Nacos FAQ</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="chapter"><a href="#_nacos%E5%B8%B8%E8%A7%81faq">11. Nacos&#24120;&#35265;FAQ</a></span></dt></dl></div>
+
+<div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="_nacos%E5%B8%B8%E8%A7%81faq" href="#_nacos%E5%B8%B8%E8%A7%81faq"></a>11.&nbsp;Nacos&#24120;&#35265;FAQ</h2></div></div></div>
+
+
+</div>
 </div>
 </div></body></html>
